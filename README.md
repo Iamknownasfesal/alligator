@@ -1,5 +1,6 @@
 # Alligator: The Ultimate Dex Aggregator Library
 
+
 ## What is Alligator?
 
 Alligator is designed as a comprehensive solution for traders and liquidity providers within the Sui ecosystem. The DEX Aggregator Module for Alligator aims to enhance the trading experience by aggregating liquidity from various decentralized exchanges (DEXs) on the Sui network. This approach ensures users have access to the best possible trading rates and reduces slippage, thereby maximizing efficiency and user satisfaction.
@@ -15,6 +16,7 @@ Alligator is designed as a comprehensive solution for traders and liquidity prov
 Using Programmable Transaction Blocks in Sui, Alligator will be able to aggregate liquidity from various DEXs on the Sui network. This will be done by using a pathfinding algorithm to find the best possible trading rates and reduce slippage.
 
 Contract is only used for splitting amounts & sending back to receiver.
+
 Backend is not included since time was a bit less, but in the following weeks we want to make the backend and frontend.
 
 ## How to test it?
