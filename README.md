@@ -15,6 +15,7 @@ Alligator is designed as a comprehensive solution for traders and liquidity prov
 Using Programmable Transaction Blocks in Sui, Alligator will be able to aggregate liquidity from various DEXs on the Sui network. This will be done by using a pathfinding algorithm to find the best possible trading rates and reduce slippage.
 
 Contract is only used for splitting amounts & sending back to receiver.
+Backend is not included since time was a bit less, but in the following weeks we want to make the backend and frontend.
 
 ## How to test it?
 
