@@ -1,0 +1,11 @@
+[package]
+name = "alligator"
+version = "1.0.0"
+
+[dependencies]
+Sui = {git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "mainnet-v1.6.3", override = true}
+
+[addresses]
+alligator = "0x0"
+std = "0x1"
+sui = "0x2"
