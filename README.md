@@ -5,6 +5,7 @@
 
 Alligator is designed as a comprehensive solution for traders and liquidity providers within the Sui ecosystem. The DEX Aggregator Module for Alligator aims to enhance the trading experience by aggregating liquidity from various decentralized exchanges (DEXs) on the Sui network. This approach ensures users have access to the best possible trading rates and reduces slippage, thereby maximizing efficiency and user satisfaction.
 
+Check out what is a DEX Aggreator and what is Alligator from our presentation in [GitHub](https://github.com/Iamknownasfesal/alligator/blob/prod/alligator-presentation.pdf)
 ## Goals
 
 - Provide a comprehensive solution for traders and liquidity providers within the Sui ecosystem.
