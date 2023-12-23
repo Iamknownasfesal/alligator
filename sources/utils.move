@@ -12,12 +12,12 @@ module alligator::utils {
     use sui::tx_context::{TxContext};
     use sui::pay;
 
+    const E_NON_SUFFICIENT_BALANCE: u64 = 1;
+
     public fun is_sufficient<T>(coin: &Coin<T>, amount: u64) {
         let balance = coin::value(coin);
 
-        if (balance < amount) {
-            abort 0
-        }
+        assert!(balance >= amount, E_NON_SUFFICIENT_BALANCE)
     }
 
     public fun merge_coins<T>(coins: vector<Coin<T>>, ctx: &mut TxContext): Coin<T> {

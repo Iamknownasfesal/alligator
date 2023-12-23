@@ -31,6 +31,13 @@ module alligator::aggregator {
         amount: u64
     }
 
+    struct TakeFeeEvent<T> has copy, drop {
+        coin_type: T,
+        amount: u64
+    }
+
+    const E_LESS_THAN_FEE: u64 = 1;
+
     public entry fun aggregate_start<T>(coins: vector<Coin<T>>, amount: u64, receiver: address, ctx: &mut TxContext): Coin<T>{
         event::emit(AggregateStartEvent {
             coin_type: type_name::get<T>(),
@@ -51,9 +58,18 @@ module alligator::aggregator {
 
     public entry fun take_fee<T>(in: Coin<T>, fee: &Fee, receiver: address, ctx: &mut TxContext): Coin<T> {
         let curr_fee = get_fee(fee);
-        assert!(coin::value<T>(&in) < curr_fee, 01);
+
+        assert!(coin::value<T>(&in) < curr_fee, E_LESS_THAN_FEE);
+
         let split = coin::split<T>(&mut in, curr_fee, ctx);
+
         transfer::public_transfer<Coin<T>>(split, receiver);
+
+        event::emit(TakeFeeEvent {
+            coin_type: type_name::get<T>(),
+            amount: curr_fee
+        });
+
         in
     }
 }

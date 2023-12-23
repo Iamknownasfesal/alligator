@@ -40,8 +40,9 @@ module alligator::admin {
         fee.current_fee
     }
 
-    public fun update_fee(_: &AdminCap, fee: &mut Fee, new_fee: u64, _: &mut TxContext) {
+    public fun update_fee(_: &AdminCap, fee: &mut Fee, new_fee: u64, receiver: address, _: &mut TxContext) {
         fee.current_fee = new_fee;
+        fee.receiver = receiver;
     }
 
     public fun add_admin(_: &AdminCap, receiver: address, ctx: &mut TxContext) {
