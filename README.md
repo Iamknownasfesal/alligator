@@ -16,4 +16,4 @@ Using Programmable Transaction Blocks in Sui, Alligator will be able to aggregat
 
 Contract is only used for splitting amounts & sending back to receiver.
 
-## How to use it?
+## How to use it?
