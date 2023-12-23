@@ -112,6 +112,14 @@ module alligator::tests {
             transfer::public_transfer(utils::merge_coins(lasted_coins, test_scenario::ctx(scenario)), swapper);
         };
 
+        test_scenario::next_tx(scenario, swapper);
+        {
+            let coinb = test_scenario::take_from_sender<Coin<MYCOIN>>(scenario);
+            aggregator::aggregate_end<MYCOIN>(&coinb, 50);
+
+            transfer::public_transfer(coinb, swapper);
+        };
+
         test_scenario::end(scenario_val);
     }
 }

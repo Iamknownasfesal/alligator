@@ -47,7 +47,7 @@ module alligator::aggregator {
         split_coins_and_transfer_rest<T>(coins, amount, receiver, ctx)
     }   
 
-    public fun aggregate_end<T>(coin: &Coin<T>,amount: u64) {
+    public fun aggregate_end<T>(coin: &Coin<T>, amount: u64) {
         event::emit(AggregateEndEvent {
             coin_type: type_name::get<T>(),
             amount: amount
