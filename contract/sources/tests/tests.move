@@ -12,6 +12,7 @@ module alligator::tests {
     fun main_test() {
         use sui::test_scenario;
         use alligator::aggregator;
+        use alligator::utils;
         use sui::transfer;
         use sui::coin::{Self, Coin, TreasuryCap};
         use std::vector;
@@ -83,8 +84,6 @@ module alligator::tests {
             test_scenario::return_to_sender(scenario, coinb2);
         };
 
-        // Our test:
-
         test_scenario::next_tx(scenario, swapper);
         {
             let v = vector::empty<Coin<MYCOIN>>();
@@ -94,6 +93,23 @@ module alligator::tests {
             let lasted_coins = aggregator::aggregate_start<MYCOIN>(v, 50, swap_platform1, test_scenario::ctx(scenario));
 
             transfer::public_transfer(lasted_coins, swapper);
+        };
+
+        test_scenario::next_tx(scenario, swapper);
+        {
+            let v = vector::empty<Coin<MYCOIN>>();
+            let weights = vector::empty<u64>();
+            let coinb = test_scenario::take_from_sender<Coin<MYCOIN>>(scenario);
+            vector::push_back(&mut v, coinb);
+
+            vector::push_back(&mut weights, 20);
+            vector::push_back(&mut weights, 80);
+
+            let lasted_coins = utils::split_coin_by_weights(v, weights, test_scenario::ctx(scenario));
+
+            assert!(vector::length(&lasted_coins) == 2, 99);
+
+            transfer::public_transfer(utils::merge_coins(lasted_coins, test_scenario::ctx(scenario)), swapper);
         };
 
         test_scenario::end(scenario_val);
