@@ -1,4 +1,4 @@
-# Alligator: The Ultimate Dex Aggregator
+# Alligator: The Ultimate Dex Aggregator Library
 
 ## What is Alligator?
 
