@@ -1,5 +1,7 @@
-# Alligator: The Ultimate Dex Aggregator Library
 
+![Artboard 1 copy 2-cropped](https://github.com/Iamknownasfesal/alligator/assets/39006465/a9f5e064-8053-46f8-af9a-5f1df2c6b256)
+
+# The Ultimate Dex Aggregator Library: Alligator
 
 ## What is Alligator?
 
