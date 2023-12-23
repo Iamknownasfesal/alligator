@@ -38,7 +38,7 @@ module alligator::aggregator {
 
     const E_LESS_THAN_FEE: u64 = 1;
 
-    public entry fun aggregate_start<T>(coins: vector<Coin<T>>, amount: u64, receiver: address, ctx: &mut TxContext): Coin<T>{
+    public fun aggregate_start<T>(coins: vector<Coin<T>>, amount: u64, receiver: address, ctx: &mut TxContext): Coin<T>{
         event::emit(AggregateStartEvent {
             coin_type: type_name::get<T>(),
             amount: amount
@@ -47,7 +47,7 @@ module alligator::aggregator {
         split_coins_and_transfer_rest<T>(coins, amount, receiver, ctx)
     }   
 
-    public entry fun aggregate_end<T>(coin: &Coin<T>,amount: u64) {
+    public fun aggregate_end<T>(coin: &Coin<T>,amount: u64) {
         event::emit(AggregateEndEvent {
             coin_type: type_name::get<T>(),
             amount: amount
@@ -56,7 +56,7 @@ module alligator::aggregator {
         is_sufficient<T>(coin, amount)
     }
 
-    public entry fun take_fee<T>(in: Coin<T>, fee: &Fee, receiver: address, ctx: &mut TxContext): Coin<T> {
+    public fun take_fee<T>(in: Coin<T>, fee: &Fee, receiver: address, ctx: &mut TxContext): Coin<T> {
         let curr_fee = get_fee(fee);
 
         assert!(coin::value<T>(&in) < curr_fee, E_LESS_THAN_FEE);

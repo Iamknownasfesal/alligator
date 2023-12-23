@@ -10,8 +10,7 @@ module alligator::admin {
     use sui::object::{Self, UID};
     use sui::transfer;
     use sui::tx_context::{Self, TxContext};
-    use sui::package;
-
+    
     struct AdminCap has store, key { id: UID }
     struct Fee has key {
         id: UID,
@@ -19,10 +18,7 @@ module alligator::admin {
         receiver: address
     }
 
-    struct FeeData has drop {}
-
-    fun init(otw: FeeData, ctx: &mut TxContext) {
-        package::claim_and_keep(otw, ctx);
+    fun init(ctx: &mut TxContext) {
         transfer::public_transfer<AdminCap>(AdminCap {
             id: object::new(ctx)
         }, tx_context::sender(ctx))
@@ -49,5 +45,10 @@ module alligator::admin {
         transfer::public_transfer<AdminCap>(AdminCap {
             id: object::new(ctx)
         }, receiver)
+    }
+
+    #[test_only]
+    public fun initTest(ctx: &mut TxContext) {
+        init(ctx);
     }
 }

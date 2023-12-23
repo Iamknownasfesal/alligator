@@ -3,7 +3,7 @@ name = "alligator"
 version = "1.0.0"
 
 [dependencies]
-Sui = {git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "mainnet-v1.6.3", override = true}
+Sui = {git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/devnet", override = true}
 
 [addresses]
 alligator = "0x0"

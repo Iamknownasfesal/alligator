@@ -16,4 +16,7 @@ Using Programmable Transaction Blocks in Sui, Alligator will be able to aggregat
 
 Contract is only used for splitting amounts & sending back to receiver.
 
-## How to use it?
+## How to test it?
+
+1. Download enviroment: [Sui](https://docs.sui.io/guides/developer/getting-started)
+2. Use `sui move test` command to run tests, or check out tests folder for test suits.
