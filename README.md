@@ -26,3 +26,7 @@ Backend is not included since time was a bit less, but in the following weeks we
 
 1. Download enviroment: [Sui](https://docs.sui.io/guides/developer/getting-started)
 2. Use `sui move test` command to run tests, or check out tests folder for test suits.
+
+## Contract Addresses
+
+Devnet: 0x1147705802e3413442ed4570de23b4acbb84eef81c0c5874759b4d392f01383b
