@@ -2,17 +2,17 @@
 
 # PoC Version of Alligator
 
-## How to use it?
+## How to use it?
 
 Firstly, you should get faucet via Sui Wallet on Testnet.
 Then you can use by setting your private key in .env file and running `npm run start` or `yarn start` or `pnpm start` command.
 
-## How does it work?
+## How does it work?
 
 You can check out index.ts for the mockup of the Alligator. It uses Sui SDK to interact with Sui Blockchain.
 We use PTBs to make 15~ transactions in one transaction. In this mockup we only swap X to Y with two swap providers. But in the real version, we will use pathfinding algorithm to find the best possible trading rates and reduce slippage.
 
-## Addresses
+## Addresses
 
 - SUI 0x2::sui::SUI
 - swapper1 0x061fb2da3c48899487106e5b4ade6da596e5af4c397f82758e334cd837c0af78
