@@ -5,11 +5,13 @@
 ## How to use it?
 
 Firstly, you should get faucet via Sui Wallet on Testnet.
-Then you can use by setting your private key in .env file and running `npm run start` or `yarn start` or `pnpm start` command.
+
+Then you can use by setting your private key in .env file(you can check out .env.example file for example) and running `npm run start` or `yarn start` or `pnpm start` command.
 
 ## How does it work?
 
 You can check out index.ts for the mockup of the Alligator. It uses Sui SDK to interact with Sui Blockchain.
+
 We use PTBs to make 15~ transactions in one transaction. In this mockup we only swap X to Y with two swap providers. But in the real version, we will use pathfinding algorithm to find the best possible trading rates and reduce slippage.
 
 ## Addresses
